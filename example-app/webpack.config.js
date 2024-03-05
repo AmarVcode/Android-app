@@ -1,10 +1,18 @@
 const webpack = require("@nativescript/webpack");
 
 module.exports = (env) => {
-	webpack.init(env);
+    webpack.init(env);
 
-	// Learn how to customize:
-	// https://docs.nativescript.org/webpack
+    // Define external dependencies here
+    const externals = {
+        // Example:
+        // 'dependency-name': 'packageName'
+    };
 
-	return webpack.resolveConfig();
+    // Learn how to customize:
+    // https://docs.nativescript.org/webpack
+
+    return webpack.resolveConfig({
+        externals
+    });
 };
